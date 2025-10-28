@@ -247,6 +247,7 @@ class ArmorStandGUI implements Listener {
                         Utils.title(p, Config.cbCreated);
                     }
                 }
+
                 if (Config.logGeneratedSummonCommands) {
                     Config.logSummonCommand(p.getName(), command);
                 }
@@ -280,8 +281,7 @@ class ArmorStandGUI implements Listener {
                 as.setInvulnerable(inv);
                 Utils.title(p, Config.invul + ": " + (inv ? Config.isOn : Config.isOff));
             }
-            case SLOTS ->
-                    Utils.title(p, Config.equip + ": " + (Utils.toggleSlotsDisabled(as) ? Config.locked : Config.unLocked));
+            case SLOTS -> Utils.title(p, Config.equip + ": " + (Utils.toggleSlotsDisabled(as) ? Config.locked : Config.unLocked));
             case MOVE -> {
                 AST.scheduler().runAtEntity(p, task -> p.closeInventory());
                 as.removeMetadata("clone", AST.plugin);
