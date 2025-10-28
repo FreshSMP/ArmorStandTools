@@ -94,10 +94,10 @@ public class AST extends JavaPlugin {
         Config.reload();
         ArmorStandGUI.init();
         scheduler.runTimer(task -> {
-            for(UUID uuid : activeTool.keySet()) {
+            for (UUID uuid : activeTool.keySet()) {
                 Player p = getServer().getPlayer(uuid);
                 ArmorStandTool tool = activeTool.get(uuid);
-                if(p != null && tool != null && p.isOnline() && selectedArmorStand.containsKey(uuid)) {
+                if (p != null && tool != null && p.isOnline() && selectedArmorStand.containsKey(uuid)) {
                     tool.use(p, selectedArmorStand.get(uuid));
                 }
             }

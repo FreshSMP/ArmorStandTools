@@ -57,7 +57,7 @@ class ArmorStandGUI implements Listener {
         String name = as.getCustomName();
         if (name == null) {
             name = Config.armorStand;
-        } else if(name.length() > 32) {
+        } else if (name.length() > 32) {
             name = name.substring(0, 32);
         }
 

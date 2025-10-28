@@ -235,7 +235,7 @@ class Utils {
             }
 
             if (!skullOwner.isEmpty()) {
-                if(n > 0) sb.append(",");
+                if (n > 0) sb.append(",");
                 sb.append(skullOwner);
             }
 
@@ -332,7 +332,7 @@ class Utils {
             sb.append("NoGravity:1,");
         }
 
-        if(as.hasArms()) {
+        if (as.hasArms()) {
             sb.append("ShowArms:1,");
         }
 
