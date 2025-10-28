@@ -346,18 +346,18 @@ class ArmorStandGUI implements Listener {
     }
 
     private void updateArmorStandInventory() {
-        AST.scheduler().runLater(task -> {
-            EntityEquipment equipment = as.getEquipment();
+        AST.scheduler().runAtEntity(as, task -> {
             if (as == null || i == null) {
                 return;
             }
 
+            EntityEquipment equipment = as.getEquipment();
             equipment.setItemInMainHand(i.getItem(INV_SLOT_MAIN_HAND));
             equipment.setItemInOffHand(i.getItem(INV_SLOT_OFF_HAND));
             equipment.setHelmet(i.getItem(INV_SLOT_HELMET));
             equipment.setChestplate(i.getItem(INV_SLOT_CHEST));
             equipment.setLeggings(i.getItem(INV_SLOT_LEGS));
             equipment.setBoots(i.getItem(INV_SLOT_BOOTS));
-        }, 1L);
+        });
     }
 }
